@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
 import './Homerightbar.css';
+import TemperatureIcon from './Icons/temperature.png';
+import HumidityIcon from './Icons/humidity.png';
+import GhiIcon from './Icons/ghi.png';
+import WindSpeedIcon from './Icons/wind.png';
+import DhiIcon from './Icons/dhi.png';
+import DniIcon from './Icons/sea.png';
+import EfficiencyIcon from './Icons/efficacy.png';
+import CapacityIcon from './Icons/capacity.png';
 
 const Homerightbar = () => {
 
@@ -37,6 +45,7 @@ const Homerightbar = () => {
       <form onSubmit={handleAnalyze}>
         <div className="box-container">
           <div className="corner-left input-container c1">
+            <img className='input-icons' src={GhiIcon} alt="" />
             <p className='input-name'>Global Horizontal Irradiance (GHI)</p>
             <input
               placeholder='0'
@@ -49,6 +58,7 @@ const Homerightbar = () => {
             <p className='input-unit'>Wh/m<sup>2</sup></p>
           </div>
           <div className="input-container c2">
+            <img className='input-icons' src={TemperatureIcon} alt="" />
             <p className='input-name'>Temperature (T)</p>
             <input
               placeholder='0'
@@ -61,6 +71,7 @@ const Homerightbar = () => {
             <p className='input-unit'>&deg;C</p>
           </div>
           <div className="corner-right input-container c3">
+            <img className='input-icons' src={HumidityIcon} alt="" />
             <p className='input-name'>Humidity (RH)</p>
             <input
               placeholder='0'
@@ -76,6 +87,7 @@ const Homerightbar = () => {
 
         <div className="box-container">
           <div className="corner-left input-container c4">
+            <img className='input-icons' src={WindSpeedIcon} alt="" />
             <p className='input-name'>Wind Speed (W.S.)</p>
             <input
               placeholder='0'
@@ -88,6 +100,7 @@ const Homerightbar = () => {
             <p className='input-unit'>m/s</p>
           </div>
           <div className="input-container c5">
+          <img className='input-icons' src={DhiIcon} alt="" />
             <p className='input-name'>Diffuse Horizontal Irradiance (DHI)</p>
             <input
               placeholder='0'
@@ -100,6 +113,7 @@ const Homerightbar = () => {
             <p className='input-unit'>Wh/m<sup>2</sup></p>
           </div>
           <div className="corner-right input-container c6">
+          <img className='input-icons' src={DniIcon} alt="" />
             <p className='input-name'>Direct Normal Irradiation (DNI)</p>
             <input
               placeholder='0'
@@ -117,6 +131,7 @@ const Homerightbar = () => {
 
         <div className="box-container">
           <div className="corner-left input-container system c7">
+          <img className='input-icons' src={CapacityIcon} alt="" />
             <p className='input-name'>PV System Capacity</p>
             <input
               placeholder='0'
@@ -129,6 +144,7 @@ const Homerightbar = () => {
             <p className='input-unit'>kW</p>
           </div>
           <div className="corner-right input-container system c8">
+            <img className='input-icons' src={EfficiencyIcon} alt="" />
             <p className='input-name'>System Efficiency (0-1)</p>
             <input
               placeholder='0'

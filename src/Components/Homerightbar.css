@@ -20,9 +20,10 @@
 }
 
 .input-container {
+    position: relative;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     background-color: whitesmoke;
     width: 33.33%;
     height: 20vh;
@@ -30,6 +31,7 @@
     margin: 10px;
     transition: 0.5s;
 }
+
 
 .input-container:hover {
     transform: scale(1.02, 1.02);
@@ -168,8 +170,8 @@ h1 {
     cursor: pointer;
     font-size: 18px;
     border: none;
-    padding: 10px 30px;
-    border-radius: 12px;
+    padding: 10px 50px;
+    border-radius: 32px;
     background-color: #ffe0b2;
     transition: 0.5s;
 }
@@ -179,6 +181,13 @@ h1 {
     transform: translateY(-5px);
     background: linear-gradient(135deg, #2196f3, #2962ff);
     color: white;
+}
+
+.input-icons {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    width: 15%;
 }
 
 @media only screen and (max-width: 768px) {
