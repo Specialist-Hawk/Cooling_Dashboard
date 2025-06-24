@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Sidebar from '../../Components/Sidebar.jsx';
-import Homerightbar from '../../Components/Homerightbar.jsx'
-import Navbar from './../../Components/Navbar.jsx';
+import Homerightbar from '../../Components/Homerightbar.jsx';
 import './Home.css'
 
 function Home() {
