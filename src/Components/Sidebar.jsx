@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div className='main-sidebar-container'>
       <div>
         <ul className='ul-container'>
-            <h4 className="menu">Client Dashboard</h4>
+            <h4 className="menu">Hello (Username)!</h4>
             <li className='li-container active-container'>
                 <img className='sidebar-icons' src={Home} alt="" />
                 <p className='item-names'>Home</p>
