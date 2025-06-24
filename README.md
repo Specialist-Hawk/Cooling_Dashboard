@@ -34,5 +34,5 @@ A responsive React dashboard for monitoring and visualizing cooling system and s
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/<your-username>/Cooling_Dashboard.git
+   git clone https://github.com/Specialist-Hawk/Cooling_Dashboard.git
    cd Cooling_Dashboard
