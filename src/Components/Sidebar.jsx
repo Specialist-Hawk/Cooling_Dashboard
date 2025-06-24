@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Sidebar.css';
 import Home from './Icons/home.png';
 import History from './Icons/history.png';

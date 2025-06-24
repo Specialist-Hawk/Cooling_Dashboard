@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './Homerightbar.css';
-import GHI from './Icons/GHI.png';
-import Temperature from './Icons/thermometer.png';
-import Navbar from './Navbar';
 
 const Homerightbar = () => {
 
