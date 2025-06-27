@@ -11,6 +11,8 @@ import CapacityIcon from './Icons/capacity.png';
 
 const Homerightbar = () => {
 
+  const [energyOutput, setEnergyOutput] = useState(0);
+
   const [ghi, setGhi] = useState('');
   const [temperature, setTemperature] = useState('');
   const [humidity, setHumidity] = useState('');
@@ -20,23 +22,33 @@ const Homerightbar = () => {
   const [capacity, setCapacity] = useState('');
   const [efficiency, setEfficiency] = useState('');
 
-  const handleAnalyze = (e) => {
+  const handleAnalyze = async(e) => {
     e.preventDefault();
 
     const data = {
-      ghi,
-      temperature,
-      humidity,
-      windSpeed,
-      dhi,
-      dni,
-      capacity,
-      efficiency,
+      'ghi': ghi,
+      'temperature': temperature,
+      'humidity': humidity,
+      'windSpeed': windSpeed,
+      'dhi': dhi,
+      'dni': dni,
+      'capacity': capacity,
+      'efficiency': efficiency,
     };
 
-    console.log('Analyzing with data:', data);
-    window.alert('Thank you for the submittion: Analyzing data.');
-    // TODO: make API call or further processing here
+
+    await fetch("/postdata", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    });
+
+    const response = await fetch("/getdata");
+    const obj = await response.json()
+    setEnergyOutput(obj['Energy Output'])
+
   };
 
   return (
@@ -72,7 +84,7 @@ const Homerightbar = () => {
           </div>
           <div className="corner-right input-container c3">
             <img className='input-icons' src={HumidityIcon} alt="" />
-            <p className='input-name'>Humidity (RH)</p>
+            <p className='input-name'>Relative Humidity (RH)</p>
             <input
               placeholder='0'
               className='input-field p3'
@@ -164,6 +176,7 @@ const Homerightbar = () => {
           <button type="submit" className='analyze-button'>Analyze</button>
         </div>
       </form>
+        <h3>Your Expected Energy Output is: <span className='output-value'>{energyOutput}</span> kWh</h3>
     </div>
   );
 }

@@ -73,10 +73,11 @@
 .input-field {
     background-color: transparent;
     border-width: 0 0 2px 0;
-    border-color: rgb(0, 0, 0);
+    border-color: black;
     width: 100px;
     font-size: 32px;
     font-weight: bold;
+    transition-duration: 0.3s;
 }
 
 .input-field:focus {
@@ -223,6 +224,23 @@ h1 {
         width: 90%;
         padding: 12px;
         font-size: 16px;
-        margin-bottom: 50px;
     }
+
+    h3 {
+        margin: 50px 0;
+        font-size: 18px;
+    }
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    margin-top: 20px;
+    padding: 10px;
+    color: #006064;
+}
+
+.output-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0D5EA6;
 }
