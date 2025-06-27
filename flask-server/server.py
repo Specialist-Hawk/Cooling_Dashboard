@@ -21,7 +21,7 @@ def calc(data):
 def postdata():
     global energy_output
     data = request.get_json()
-    energy_output = calc(data)
+    energy_output = round(calc(data), 4)
     return {"status": "success", "received": data}, 200
 
 
