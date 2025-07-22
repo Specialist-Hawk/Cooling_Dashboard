@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Homerightbar.css';
 import TemperatureIcon from './Icons/temperature.png';
 import HumidityIcon from './Icons/humidity.png';
@@ -9,7 +11,13 @@ import DniIcon from './Icons/sea.png';
 import EfficiencyIcon from './Icons/efficacy.png';
 import CapacityIcon from './Icons/capacity.png';
 
+
+
+const devLink = "http://127.0.0.1:5000";
+
 const Homerightbar = () => {
+
+  const navigate = useNavigate();
 
   const [energyOutput, setEnergyOutput] = useState(0);
 
@@ -22,8 +30,8 @@ const Homerightbar = () => {
   const [capacity, setCapacity] = useState('');
   const [efficiency, setEfficiency] = useState('');
 
-  const handleAnalyze = async(e) => {
-    e.preventDefault();
+  const handleAnalyze = async(formResponse) => {
+    formResponse.preventDefault();
 
     const data = {
       'ghi': ghi,
@@ -37,7 +45,7 @@ const Homerightbar = () => {
     };
 
 
-    await fetch("/postdata", {
+    await fetch(devLink+"/postdata", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -45,10 +53,11 @@ const Homerightbar = () => {
       }
     });
 
-    const response = await fetch("/getdata");
+    const response = await fetch(devLink+"/getdata");
     const obj = await response.json()
     setEnergyOutput(obj['Energy Output'])
 
+    navigate('/analytics');
   };
 
   return (
@@ -176,7 +185,6 @@ const Homerightbar = () => {
           <button type="submit" className='analyze-button'>Analyze</button>
         </div>
       </form>
-        <h3>Your Expected Energy Output is: <span className='output-value'>{energyOutput}</span> kWh</h3>
     </div>
   );
 }
